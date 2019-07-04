@@ -15,9 +15,12 @@
 
         <!-- Custom styles for this template -->
         <link href="css/full-width-pics.css" rel="stylesheet">
+        <link href="css/myStyle.css" rel="stylesheet">
 
     </head>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/JavaScript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/JavaScript">
         function login() {
@@ -82,8 +85,8 @@
             </div>
         </section>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Footer -->
+        <?php require('footer.php') ?>
 
     </body>
 

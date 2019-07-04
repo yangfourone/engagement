@@ -15,10 +15,14 @@
 
     <!-- Custom styles for this template -->
     <link href="css/full-width-pics.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/myStyle.css">
+    <link rel="stylesheet" href="css/myStyle.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
   </head>
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script type="text/JavaScript" src="js/jquery-1.11.3.min.js"></script>
   <script type="text/JavaScript">
 
@@ -169,61 +173,66 @@
             <div class="row top-area">
                 <div class="col-lg-8">
                     <div class="card" id="card">
-                        <div class="card-header">出席統計表格 (* 為必填)</div>
+                        <div class="card-header">
+                            <i class="fa fa-fw fa-child"></i>出席統計表格( <strong style="color: red;">*</strong> 為必填)
+                        </div>
                         <div class="card-body" align="left">
 
-                            <label for="guestName">您的大名 *</label>
-                            <input type="text" id="guestName"> <br><br><br>
+                            <label class="form-option-title" for="guestName">您的大名 <strong style="color: red;">*</strong></label>
+                            <input class="form-input" type="text" id="guestName"><br><br>
 
-                            <label for="phoneNumber">聯絡電話 *</label>
-                            <input type="text" id="phoneNumber"> <br><br><br>
+                            <label class="form-option-title" for="phoneNumber">聯絡電話 <strong style="color: red;">*</strong></label>
+                            <input class="form-input" type="text" id="phoneNumber"><br><br>
 
-                            <label for="attend">請問您是否方便參加?</label>
+                            <label class="form-option-title" for="attend">請問您是否方便參加?</label>
                             <select id="attend" onchange="displayTable()">
                                 <option value="參加">一定到場祝福</option>
                                 <option value="不參加">不方便參加</option>
-                            </select> <br><br><br>
+                            </select><br><br>
 
                             <div id="attend-table">
-                                <label for="invitation">是否需親送喜帖並當面邀請?</label> <br><br>
+                                <label class="form-option-title" for="invitation">是否需親送喜帖並當面邀請?</label><br>
                                 <input name="invitation" type="radio" value="self" id="self"> 需要, 約一下時間 <br><br>
                                 <input name="invitation" type="radio" value="none" id="none"> 不用, 我記得時間會準時出席 <br><br>
 
-                                <label for="attendNumber">出席人數及餐食屬性</label><br>
-                                <input id="checkbox_meat" type="checkbox" value="meat"> 葷食,&nbsp;&nbsp;
-                                <select id="eatMeat"  style="width: 85%;">
-                                    <option value="0">0 位</option>
-                                    <option value="1">1 位</option>
-                                    <option value="2">2 位</option>
-                                    <option value="3">3 位</option>
-                                    <option value="4">4 位</option>
-                                    <option value="5">5 位</option>
-                                    <option value="6">6 位</option>
-                                    <option value="7">7 位</option>
-                                    <option value="8">8 位</option>
-                                    <option value="9">9 位</option>
-                                    <option value="10">10 位</option>
-                                </select> <br>
-
-                                <input id="checkbox_vege" type="checkbox" value="vege"> 素食,&nbsp;&nbsp;
-                                <select id="eatVege" style="width: 85%;">
-                                    <option value="0">0 位</option>
-                                    <option value="1">1 位</option>
-                                    <option value="2">2 位</option>
-                                    <option value="3">3 位</option>
-                                    <option value="4">4 位</option>
-                                    <option value="5">5 位</option>
-                                    <option value="6">6 位</option>
-                                    <option value="7">7 位</option>
-                                    <option value="8">8 位</option>
-                                    <option value="9">9 位</option>
-                                    <option value="10">10 位</option>
-                                </select> <br><br>
+                                <label class="form-option-title" for="attendNumber">出席人數及餐食屬性</label><br>
+                                <div class="form-meal">
+                                    <input id="checkbox_meat" type="checkbox" value="meat"> 葷食,&nbsp;&nbsp;
+                                    <select id="eatMeat" style="width: 85%;">
+                                        <option value="0">0 位</option>
+                                        <option value="1">1 位</option>
+                                        <option value="2">2 位</option>
+                                        <option value="3">3 位</option>
+                                        <option value="4">4 位</option>
+                                        <option value="5">5 位</option>
+                                        <option value="6">6 位</option>
+                                        <option value="7">7 位</option>
+                                        <option value="8">8 位</option>
+                                        <option value="9">9 位</option>
+                                        <option value="10">10 位</option>
+                                    </select> <br>
+                                </div>
+                                <div class="form-meal">
+                                    <input id="checkbox_vege" type="checkbox" value="vege"> 素食,&nbsp;&nbsp;
+                                    <select id="eatVege" style="width: 85%;">
+                                        <option value="0">0 位</option>
+                                        <option value="1">1 位</option>
+                                        <option value="2">2 位</option>
+                                        <option value="3">3 位</option>
+                                        <option value="4">4 位</option>
+                                        <option value="5">5 位</option>
+                                        <option value="6">6 位</option>
+                                        <option value="7">7 位</option>
+                                        <option value="8">8 位</option>
+                                        <option value="9">9 位</option>
+                                        <option value="10">10 位</option>
+                                    </select><br><br>
+                                </div>
                             </div>
                         </div>
 
                         <div class="card-footer" align="center">
-                            <button class="button2" id="guest_save" onclick="submitSheet()">提交</button>
+                            <button class="form-submit-button" id="guest_save" onclick="submitSheet()">提交</button>
                         </div>
                     </div>
                     <br><br>
@@ -240,9 +249,8 @@
         <img src="pic/bg2.jpg" style="width: 100%; height: auto;">
     </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <?php require('footer.php') ?>
 
   </body>
 

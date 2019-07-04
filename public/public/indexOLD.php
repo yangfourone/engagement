@@ -15,36 +15,13 @@
 
         <!-- Custom styles for this template -->
         <link href="css/full-width-pics.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/myStyle.css">
 
     </head>
 
-    <style>
-        /* 葷素的 select 我有另外設定 width */
-        input[type=text], select {
-            width: 100%;
-            height: 40px;
-            padding: 8px 14px;
-            margin: 4px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button {
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        label {
-            font-size: 23px;
-        }
-    </style>
-
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/JavaScript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/JavaScript">
 
@@ -278,9 +255,8 @@
         <img src="pic/bg2.jpg" style="width: 100%; height: auto;">
     </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <?php require('footer.php') ?>
 
     </body>
 

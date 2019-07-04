@@ -31,35 +31,11 @@ else{
         <script type="text/javascript"  src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="css/myStyle.css">
     </head>
 
-    <style>
-        input[type=text], select {
-            width: 100%;
-            height: 40px;
-            padding: 4px 8px;
-            margin: 0px 0px 8px 0px;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button {
-            width: 30%;
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-    </style>
-
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/JavaScript">
 
         let invitation_address;
@@ -453,8 +429,8 @@ else{
         <br>
     </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <?php require('footer.php') ?>
 
     </body>
 

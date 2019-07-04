@@ -19,6 +19,9 @@
 
     </head>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/JavaScript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/JavaScript">
         let index;
@@ -155,9 +158,8 @@
         </div>
     </section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <?php require('footer.php') ?>
 
     </body>
 

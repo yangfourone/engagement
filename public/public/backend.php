@@ -32,8 +32,12 @@ else{
 
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="css/myStyle.css">
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
     </head>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/JavaScript">
 
         let invitation_address;
@@ -349,9 +353,9 @@ else{
 
         <!-- Body -->
         <section>
-            <div class="row top-area" style="margin: 2% 1%;">
+            <div class="row top-area">
                 <div class="col-lg-4">
-                    <button class="button2" id="NewGuest" style="width: 100%;">新增</button>
+                    <button class="backend-form-button color-green" id="NewGuest" style="width: 100%">新增</button>
                     <br><br>
                     <div class="card" id="card" style="display: none;">
                         <div class="card-header">
@@ -359,16 +363,16 @@ else{
                         </div>
 
                         <div class="card-body" align="left">
-                            <label for="id">編號:</label>
-                            <input type="text" id="id" disabled> <br><br>
+                            <label class="backend-form-title" for="id">編號:</label>
+                            <input class="backend-form-input" type="text" id="id" disabled> <br><br>
 
-                            <label for="guestName">您的大名</label>
-                            <input type="text" id="guestName"> <br><br>
+                            <label class="backend-form-title" for="guestName">您的大名</label>
+                            <input class="backend-form-input" type="text" id="guestName"> <br><br>
 
-                            <label for="phoneNumber">聯絡電話</label>
-                            <input type="text" id="phoneNumber"> <br><br>
+                            <label class="backend-form-title" for="phoneNumber">聯絡電話</label>
+                            <input class="backend-form-input" type="text" id="phoneNumber"> <br><br>
 
-                            <label for="attend">請問您是否方便參加?</label>
+                            <label class="backend-form-title" for="attend">請問您是否方便參加?</label>
                             <select id="attend" onchange="displayTable()">
                                 <option value="參加">一定到場祝福</option>
                                 <option value="不參加">不方便參加</option>
@@ -376,14 +380,14 @@ else{
 
                             <div id="attend-table">
 
-                                <label for="seat">座位:</label>
-                                <input type="text" id="seat"><br><br>
+                                <label class="backend-form-title" for="seat">座位:</label>
+                                <input class="backend-form-input" type="text" id="seat"><br><br>
 
-                                <label for="invitation">是否需親送喜帖並當面邀請?</label> <br>
+                                <label class="backend-form-title" for="invitation">是否需親送喜帖並當面邀請?</label> <br>
                                 <input name="invitation" type="radio" value="self" id="self"> 需要, 約一下時間<br>
                                 <input name="invitation" type="radio" value="none" id="none"> 不用, 我記得時間會準時出席<br><br>
 
-                                <label for="attendNumber">出席人數及餐食屬性</label><br>
+                                <label class="backend-form-title" for="attendNumber">出席人數及餐食屬性</label><br>
                                 <input id="checkbox_meat" type="checkbox" value="meat"> 葷食,&nbsp;&nbsp;
                                 <select id="eatMeat"  style="width: 80%;">
                                     <option value="0">0 位</option>
@@ -418,10 +422,10 @@ else{
 
                         <div class="card-footer" align="right">
                             <text align="text-center" style="color:red" id="post_result"></text>&nbsp;&nbsp;&nbsp;
-                            <button class="button2" id="guest_save">儲存</button>&nbsp;
-                            <button class="button2" id="guest_delete" style="background-color: #ea0000;">刪除</button>&nbsp;
-                            <button class="button2" id="guest_update" style="background-color: #0072e3;">更新</button>&nbsp;
-                            <button class="button2" id="guest_close" style="background-color: #000000;">取消</button>
+                            <button class="backend-form-button color-green" id="guest_save">儲存</button>&nbsp;
+                            <button class="backend-form-button color-red" id="guest_delete">刪除</button>&nbsp;
+                            <button class="backend-form-button color-blue" id="guest_update">更新</button>&nbsp;
+                            <button class="backend-form-button color-black" id="guest_close">取消</button>
                         </div>
                     </div>
                 </div>
@@ -449,7 +453,7 @@ else{
 
         <section>
             <br>
-            <div class="seat" id="seat" style="width: 90%; height: 90%; margin: auto;">
+            <div class="seat" id="seat" style="width: 90%; height: 90%;" align="center">
                 <br><br>
                 <img src="pic/howToGo.JPG" >
             </div>
@@ -457,8 +461,8 @@ else{
             <br>
         </section>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Footer -->
+        <?php require('footer.php') ?>
 
     </body>
 
