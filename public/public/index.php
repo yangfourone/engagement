@@ -154,98 +154,96 @@
 
     <!-- Content section -->
     <section class="py-5">
-        <div class="container">
-            <h1>吾女馥嘉要出閣了</h1><br><br>
-            <h2>時間</h2>
-            <p>民國 108 年 9 月 28 日</p>
-            <p>下午 6 時 36 分</p><br><br>
-
-            <h2>地點</h2>
-            <p></p>
-            <p>溪東里活動中心</p>
-            <p>702 台南市安南區府安路四段220號（北安路橋下）</p>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <h1>吾女馥嘉要出閣了</h1><br><br>
+                <h2>時間</h2>
+                <p>民國 108 年 9 月 28 日</p>
+                <p>下午 6 時 36 分</p><br><br>
+                <h2>地點</h2>
+                <p></p>
+                <p>溪東里活動中心</p>
+                <p>702 台南市安南區府安路四段220號（北安路橋下）</p>
+            </div>
+            <div class="col-lg-2"></div>
         </div>
     </section>
 
     <!-- invitation -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row top-area">
-                <div class="col-lg-8">
-                    <div class="card" id="card">
-                        <div class="card-header">
-                            <i class="fa fa-fw fa-child"></i>出席統計表格( <strong style="color: red;">*</strong> 為必填)
+    <div class="row top-area">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6">
+            <div class="card" id="card">
+                <div class="card-header">
+                    <i class="fa fa-fw fa-child"></i>出席統計表格( <strong style="color: red;">*</strong> 為必填)
+                </div>
+                <div class="card-body" align="left">
+
+                    <label class="form-option-title" for="guestName">您的大名 <strong style="color: red;">*</strong></label>
+                    <input class="form-input" type="text" id="guestName"><br><br>
+
+                    <label class="form-option-title" for="phoneNumber">聯絡電話 <strong style="color: red;">*</strong></label>
+                    <input class="form-input" type="text" id="phoneNumber"><br><br>
+
+                    <label class="form-option-title" for="attend">請問您是否方便參加?</label>
+                    <select id="attend" onchange="displayTable()">
+                        <option value="參加">一定到場祝福</option>
+                        <option value="不參加">不方便參加</option>
+                    </select><br><br>
+
+                    <div id="attend-table">
+                        <label class="form-option-title" for="invitation">是否需親送喜帖並當面邀請?</label><br>
+                        <input name="invitation" type="radio" value="self" id="self"> 需要, 約一下時間 <br><br>
+                        <input name="invitation" type="radio" value="none" id="none"> 不用, 我記得時間會準時出席 <br><br>
+
+                        <label class="form-option-title" for="attendNumber">出席人數及餐食屬性</label><br>
+                        <div class="form-meal">
+                            <input id="checkbox_meat" type="checkbox" value="meat"> 葷食,&nbsp;&nbsp;
+                            <select id="eatMeat" style="width: 85%;">
+                                <option value="0">0 位</option>
+                                <option value="1">1 位</option>
+                                <option value="2">2 位</option>
+                                <option value="3">3 位</option>
+                                <option value="4">4 位</option>
+                                <option value="5">5 位</option>
+                                <option value="6">6 位</option>
+                                <option value="7">7 位</option>
+                                <option value="8">8 位</option>
+                                <option value="9">9 位</option>
+                                <option value="10">10 位</option>
+                            </select> <br>
                         </div>
-                        <div class="card-body" align="left">
-
-                            <label class="form-option-title" for="guestName">您的大名 <strong style="color: red;">*</strong></label>
-                            <input class="form-input" type="text" id="guestName"><br><br>
-
-                            <label class="form-option-title" for="phoneNumber">聯絡電話 <strong style="color: red;">*</strong></label>
-                            <input class="form-input" type="text" id="phoneNumber"><br><br>
-
-                            <label class="form-option-title" for="attend">請問您是否方便參加?</label>
-                            <select id="attend" onchange="displayTable()">
-                                <option value="參加">一定到場祝福</option>
-                                <option value="不參加">不方便參加</option>
+                        <div class="form-meal">
+                            <input id="checkbox_vege" type="checkbox" value="vege"> 素食,&nbsp;&nbsp;
+                            <select id="eatVege" style="width: 85%;">
+                                <option value="0">0 位</option>
+                                <option value="1">1 位</option>
+                                <option value="2">2 位</option>
+                                <option value="3">3 位</option>
+                                <option value="4">4 位</option>
+                                <option value="5">5 位</option>
+                                <option value="6">6 位</option>
+                                <option value="7">7 位</option>
+                                <option value="8">8 位</option>
+                                <option value="9">9 位</option>
+                                <option value="10">10 位</option>
                             </select><br><br>
-
-                            <div id="attend-table">
-                                <label class="form-option-title" for="invitation">是否需親送喜帖並當面邀請?</label><br>
-                                <input name="invitation" type="radio" value="self" id="self"> 需要, 約一下時間 <br><br>
-                                <input name="invitation" type="radio" value="none" id="none"> 不用, 我記得時間會準時出席 <br><br>
-
-                                <label class="form-option-title" for="attendNumber">出席人數及餐食屬性</label><br>
-                                <div class="form-meal">
-                                    <input id="checkbox_meat" type="checkbox" value="meat"> 葷食,&nbsp;&nbsp;
-                                    <select id="eatMeat" style="width: 85%;">
-                                        <option value="0">0 位</option>
-                                        <option value="1">1 位</option>
-                                        <option value="2">2 位</option>
-                                        <option value="3">3 位</option>
-                                        <option value="4">4 位</option>
-                                        <option value="5">5 位</option>
-                                        <option value="6">6 位</option>
-                                        <option value="7">7 位</option>
-                                        <option value="8">8 位</option>
-                                        <option value="9">9 位</option>
-                                        <option value="10">10 位</option>
-                                    </select> <br>
-                                </div>
-                                <div class="form-meal">
-                                    <input id="checkbox_vege" type="checkbox" value="vege"> 素食,&nbsp;&nbsp;
-                                    <select id="eatVege" style="width: 85%;">
-                                        <option value="0">0 位</option>
-                                        <option value="1">1 位</option>
-                                        <option value="2">2 位</option>
-                                        <option value="3">3 位</option>
-                                        <option value="4">4 位</option>
-                                        <option value="5">5 位</option>
-                                        <option value="6">6 位</option>
-                                        <option value="7">7 位</option>
-                                        <option value="8">8 位</option>
-                                        <option value="9">9 位</option>
-                                        <option value="10">10 位</option>
-                                    </select><br><br>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-footer" align="center">
-                            <button class="form-submit-button" id="guest_save" onclick="submitSheet()">提交</button>
                         </div>
                     </div>
-                    <br><br>
                 </div>
-                <div class="col-lg-4"></div>
-            </div>
-            <h1 id="welcome" style="display: none;"></h1>
-        </div>
-    </section>
 
-    <!-- Image Section - set the background image for the header in the line below -->
+                <div class="card-footer" align="center">
+                    <button class="form-submit-button" id="guest_save" onclick="submitSheet()">提交</button>
+                </div>
+            </div>
+            <br><br>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+    <h1 id="welcome" style="display: none;"></h1>
+
     <section class="py-5 bg-image-full">
-        <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
         <img src="pic/bg2.jpg" style="width: 100%; height: auto;">
     </section>
 

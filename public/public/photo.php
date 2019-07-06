@@ -61,25 +61,25 @@
     <?php require('header.php') ?>
 
     <!-- main photo -->
-    <section class="py-5">
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-10">
-                <div class="card">
-                    <div class="card-body" id="main-card" style="display: none;" align="center">
-                        <input type="image" src="pic/left.png" id="left-button" style="margin-right: 2%;" onclick="left();">
-                        <img src="" id="main-photo" style="width: 85%; height: auto; max-height: 700px; max-width: 900px;">
-                        <input type="image" src="pic/right.png" id="right-button" style="margin-left: 2%;" onclick="right();">
-                    </div>
+    <br>
+    <div class="row" id="main-card" style="display: none;" align="center">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="card">
+                <div class="card-body" align="center">
+                    <input class="main-photo-left-button" type="image" src="pic/left.png" id="left-button" onclick="left();">
+                    <img class="main-photo" src="" id="main-photo">
+                    <input class="main-photo-right-button" type="image" src="pic/right.png" id="right-button" onclick="right();">
                 </div>
             </div>
-            <div class="col-lg-1"></div>
         </div>
-    </section>
-    <hr />
-    <!-- photo -->
+        <div class="col-lg-1"></div>
+        <hr/>
+    </div>
+
+    <!-- photo set -->
     <section class="py-5">
-        <div class="row" style="margin: 5px;">
+        <div class="row photo-set-row">
             <div class="col-lg-4">
                 <div class="card" id="card">
                     <div class="card-body" align="left">
@@ -106,7 +106,7 @@
 
     <!-- photo -->
     <section class="py-5">
-        <div class="row" style="margin: 5px;">
+        <div class="row photo-set-row">
             <div class="col-lg-4">
                 <div class="card" id="card">
                     <div class="card-body" align="left">
@@ -133,7 +133,7 @@
 
     <!-- photo -->
     <section class="py-5">
-        <div class="row" style="margin: 5px;">
+        <div class="row photo-set-row">
             <div class="col-lg-4">
                 <div class="card" id="card">
                     <div class="card-body" align="left">

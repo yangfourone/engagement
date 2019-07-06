@@ -16,6 +16,7 @@
         <!-- Custom styles for this template -->
         <link href="css/full-width-pics.css" rel="stylesheet">
         <link rel="stylesheet" href="css/myStyle.css">
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
     </head>
 
@@ -56,11 +57,11 @@
                     <br>
                     <div class="card">
                         <div class="card-header">
-                            <i class="fa fa-fw fa-child"></i>座位查詢
+                            <i class="fa fa-question-circle"></i>&nbsp;&nbsp;座位查詢
                         </div>
                         <div class="card-body">
                             <label class="search-seat-name" for="guestName">姓名: </label>
-                            <input class="search-seat-name-input" type="text" id="guestName"><br>
+                            <input class="search-seat-name-input" type="text" id="guestName"><br><br>
                             <button class="search-seat-button" id="submit">查詢</button>
                         </div>
                     </div>
