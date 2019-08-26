@@ -12,9 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="seat.php">座位查詢</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="howtogo.php">如何前往</a>
-                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="howtogo.php">如何前往</a>-->
+<!--                </li>-->
             </ul>
         </div>
     </div>

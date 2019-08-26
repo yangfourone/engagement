@@ -451,16 +451,6 @@ else{
             <br>
         </section>
 
-        <section>
-            <br>
-            <div class="seat" id="seat" style="width: 90%; height: 90%;" align="center">
-                <br><br>
-                <img src="pic/howToGo.JPG" >
-            </div>
-
-            <br>
-        </section>
-
         <!-- Footer -->
         <?php require('footer.php') ?>
 

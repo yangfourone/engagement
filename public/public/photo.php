@@ -25,12 +25,12 @@
     <script type="text/JavaScript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/JavaScript">
         let index;
-        let total=9;
+        let total=12;
 
         function photoClick(no) {
             index = no;
             topFunction();
-            document.getElementById('main-photo').src = 'pic/set/' + no + '.JPG';
+            document.getElementById('main-photo').src = 'pic/set/' + no + '.jpg';
             document.getElementById('main-card').style.display = 'block';
         }
 
@@ -83,48 +83,21 @@
             <div class="col-lg-4">
                 <div class="card" id="card">
                     <div class="card-body" align="left">
-                        <input type="image" src="pic/set/1.JPG" onclick="photoClick(1)">
+                        <input type="image" src="pic/set/1.jpg" onclick="photoClick(1)">
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="card" id="card">
                     <div class="card-body" align="left">
-                        <input type="image" src="pic/set/2.JPG" onclick="photoClick(2)">
+                        <input type="image" src="pic/set/2.jpg" onclick="photoClick(2)">
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="card" id="card">
                     <div class="card-body" align="left">
-                        <input type="image" src="pic/set/3.JPG" onclick="photoClick(3)">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- photo -->
-    <section class="py-5">
-        <div class="row photo-set-row">
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/4.JPG" onclick="photoClick(4)">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/5.JPG" onclick="photoClick(5)">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/6.JPG" onclick="photoClick(6)">
+                        <input type="image" src="pic/set/3.jpg" onclick="photoClick(3)">
                     </div>
                 </div>
             </div>
@@ -137,21 +110,75 @@
             <div class="col-lg-4">
                 <div class="card" id="card">
                     <div class="card-body" align="left">
-                        <input type="image" src="pic/set/7.JPG" onclick="photoClick(7)">
+                        <input type="image" src="pic/set/4.jpg" onclick="photoClick(4)">
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="card" id="card">
                     <div class="card-body" align="left">
-                        <input type="image" src="pic/set/8.JPG" onclick="photoClick(8)">
+                        <input type="image" src="pic/set/5.jpg" onclick="photoClick(5)">
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="card" id="card">
                     <div class="card-body" align="left">
-                        <input type="image" src="pic/set/9.JPG" onclick="photoClick(9)">
+                        <input type="image" src="pic/set/6.jpg" onclick="photoClick(6)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- photo -->
+    <section class="py-5">
+        <div class="row photo-set-row">
+            <div class="col-lg-4">
+                <div class="card" id="card">
+                    <div class="card-body" align="left">
+                        <input type="image" src="pic/set/7.jpg" onclick="photoClick(7)">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" id="card">
+                    <div class="card-body" align="left">
+                        <input type="image" src="pic/set/8.jpg" onclick="photoClick(8)">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" id="card">
+                    <div class="card-body" align="left">
+                        <input type="image" src="pic/set/9.jpg" onclick="photoClick(9)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- photo set -->
+    <section class="py-5">
+        <div class="row photo-set-row">
+            <div class="col-lg-4">
+                <div class="card" id="card">
+                    <div class="card-body" align="left">
+                        <input type="image" src="pic/set/10.jpg" onclick="photoClick(1)">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" id="card">
+                    <div class="card-body" align="left">
+                        <input type="image" src="pic/set/11.jpg" onclick="photoClick(2)">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" id="card">
+                    <div class="card-body" align="left">
+                        <input type="image" src="pic/set/12.jpg" onclick="photoClick(3)">
                     </div>
                 </div>
             </div>

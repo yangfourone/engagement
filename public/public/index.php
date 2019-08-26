@@ -149,22 +149,23 @@
 
     <!-- Header - set the background image for the header in the line below -->
     <header class="py-5 bg-image-full" style="background-image: url('pic/bg1.jpg');">
-      <img class="img-thumbnail" src="pic/logo.jpg" width="300" height="300">
+      <img class="img-thumbnail ml-5" src="pic/logo.jpg" width="300" height="300">
     </header>
 
     <!-- Content section -->
-    <section class="py-5">
+    <section class="py-5 px-3">
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
                 <h1>吾女馥嘉要出閣了</h1><br><br>
                 <h2>時間</h2>
-                <p>民國 108 年 9 月 28 日</p>
-                <p>下午 6 時 36 分</p><br><br>
+                <p></p>
+                <p>民國 108 年 9 月 28 日 &nbsp;&nbsp; 18 時 00 分 &nbsp;&nbsp;迎賓入席</p><br>
                 <h2>地點</h2>
                 <p></p>
-                <p>溪東里活動中心</p>
-                <p>702 台南市安南區府安路四段220號（北安路橋下）</p>
+                <p>桂田酒店 本館三樓羅馬廳</p>
+                <p>台南市永康區永安一街99號 (由永康交流道下)</p>
+                <a href="https://www.google.com.tw/maps/dir/Current+Location/710台南市永康區永安一街99號">點我連結 Google Maps 導航</a>
             </div>
             <div class="col-lg-2"></div>
         </div>
@@ -243,9 +244,9 @@
     </div>
     <h1 id="welcome" style="display: none;"></h1>
 
-    <section class="py-5 bg-image-full">
-        <img src="pic/bg2.jpg" style="width: 100%; height: auto;">
-    </section>
+    <div class="py-5 bg-image-full" align="center">
+        <img src="pic/bg2.jpg" style="width: 80%; height: auto;">
+    </div>
 
     <!-- Footer -->
     <?php require('footer.php') ?>

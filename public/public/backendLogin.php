@@ -66,23 +66,21 @@
         <?php require('header.php') ?>
 
         <section class="py-5">
-            <div class="container">
-                <div class="card card-login mx-auto mt-3" style="width: 50%;">
-                    <div class="card-header">後台登入</div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="account">帳號</label>
-                                <input class="form-control" id="account" type="text">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">密碼</label>
-                                <input class="form-control" id="password" type="password">
-                            </div>
-                            <button class="button2" onclick="login()">登入</button>
-                        </form>
-                    </div>
-            </div>
+            <div class="card card-login mx-auto mt-3 backend-login-form">
+                <div class="card-header">後台登入</div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="account">帳號</label>
+                            <input class="form-control" id="account" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">密碼</label>
+                            <input class="form-control" id="password" type="password">
+                        </div>
+                        <button class="button2" onclick="login()">登入</button>
+                    </form>
+                </div>
         </section>
 
         <!-- Footer -->

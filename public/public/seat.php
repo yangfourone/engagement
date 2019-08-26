@@ -51,8 +51,8 @@
         <?php require('header.php') ?>
 
         <!-- Search Sheet -->
-        <section>
-            <div class="row" style="margin: 5px;">
+        <section class="py-2">
+            <div class="row py-3" style="margin: 5px;">
                 <div class="col-lg-4">
                     <br>
                     <div class="card">
@@ -67,12 +67,12 @@
                     </div>
                 </div>
                 <div class="col-lg-8" align="center">
-                    <img src="pic/howToGo.JPG" style="width: 90%; height: auto;">
+                    <img src="pic/seat.jpg" style="width: 90%; height: auto;">
                 </div>
                 <br><br>
             </div>
         </section>
-
+        <br><br>
         <!-- Footer -->
         <?php require('footer.php') ?>
 
