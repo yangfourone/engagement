@@ -43,33 +43,9 @@
           if(confirm("確定要提交嗎？")){
               if (document.getElementById('attend').value === '參加') {
 
-                  get_meal();
                   get_invitation();
+                  get_meal();
 
-                  $.ajax({
-                      type: "POST",
-                      url: "../apiv1/guest/add",
-                      dataType: "json",
-                      data: {
-                          guestName: $("#guestName").val(),
-                          phoneNumber: $("#phoneNumber").val(),
-                          seat: "尚未安排",
-                          invitation: invitation_selected,
-                          invitationAddress: invitation_address,
-                          attend: $("#attend").val(),
-                          eatMeat: meat_count,
-                          eatVege: vegetable_count
-                      },
-                      success: function() {
-                          alert('提交成功！');
-                          clearSheet();
-                          document.getElementById('welcome').innerHTML = '竭誠歡迎您的蒞臨, 謝謝！';
-                          document.getElementById('welcome').style.display = 'block';
-                      },
-                      error: function() {
-                          alert('請確認資料是否成功填妥')
-                      }
-                  })
               } else {
                   $.ajax({
                       type: "POST",
@@ -139,7 +115,44 @@
               } else {
                   vegetable_count = 0;
               }
+
+              $.ajax({
+                  type: "POST",
+                  url: "../apiv1/guest/add",
+                  dataType: "json",
+                  data: {
+                      guestName: $("#guestName").val(),
+                      phoneNumber: $("#phoneNumber").val(),
+                      seat: "尚未安排",
+                      invitation: invitation_selected,
+                      invitationAddress: invitation_address,
+                      attend: $("#attend").val(),
+                      eatMeat: meat_count,
+                      eatVege: vegetable_count
+                  },
+                  success: function() {
+                      alert('提交成功！');
+                      clearSheet();
+                      document.getElementById('welcome').innerHTML = '竭誠歡迎您的蒞臨, 謝謝！';
+                      document.getElementById('welcome').style.display = 'block';
+                      topFunction();
+                  },
+                  error: function(response) {
+                      if (response.status === 603) {
+                          alert('請確認資料是否成功填妥');
+                      } else if (response.status === 602) {
+                          alert('此組（姓名+電話）已經填過表單囉！\n如想要更改資料請直接聯繫楊進利或馥嘉～');
+                      } else {
+                          alert('發生錯誤！可能原因為\n1. 此組（姓名+電話）已經填過表單！\n2. 資料尚未填妥！\n\n如想要更改資料請直接聯繫楊進利或馥嘉～');
+                      }
+                  }
+              })
           }
+      }
+
+      function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
       }
   </script>
 
@@ -238,11 +251,18 @@
                     <button class="form-submit-button" id="guest_save" onclick="submitSheet()">提交</button>
                 </div>
             </div>
-            <br><br>
         </div>
         <div class="col-lg-4"></div>
     </div>
-    <h1 id="welcome" style="display: none;"></h1>
+    <section class="py-5 px-3">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <h1 id="welcome" style="display: none;"></h1>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </section>
 
     <div class="py-5 bg-image-full" align="center">
         <img src="pic/bg2.jpg" style="width: 80%; height: auto;">

@@ -81,11 +81,6 @@ class GuestHandler extends SimpleRest{
 			$this ->setHttpHeaders('application/json', 603);
 			//直接key URL錯誤時頁面顯示提醒
 			echo 'Error: Data is empty.';
-		} 
-		else if($responseData =='"LoginFailed"'){
-			$this ->setHttpHeaders('application/json', 604);
-			//直接key URL錯誤時頁面顯示提醒
-			echo 'Error: Authentication fail.';
 		}
 		else {
 			$this ->setHttpHeaders('application/json', 200);

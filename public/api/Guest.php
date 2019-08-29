@@ -78,10 +78,15 @@ class Guest{
         $eatVege = $input['eatVege'];
         $seat = $input['seat'];
 
+        $checkExist_sql = "SELECT * FROM guest_engagement WHERE guestName = '$guestName' AND phoneNumber = '$phoneNumber'";
+        $checkExist_result = mysqli_query($con,$checkExist_sql);
+        $checkExist_count = mysqli_num_rows($checkExist_result);
+
 		if(!isset($guestName)||empty($guestName)||empty($phoneNumber)||!isset($phoneNumber)||!isset($invitation)||!isset($invitationAddress)||!isset($attend)||!isset($seat)){
 			return 'EMPTY';
-		}
-		else {
+		} else if ($checkExist_count !== 0) {
+		    return 'EXIST';
+        } else {
             $sql_insert = "INSERT INTO guest_engagement (guestName,phoneNumber,invitation,invitationAddress,attend,eatMeat,eatVege,seat) VALUES ('$guestName','$phoneNumber','$invitation','$invitationAddress','$attend','$eatMeat','$eatVege','$seat')";
             mysqli_query($con,$sql_insert);
             return 'ok';
