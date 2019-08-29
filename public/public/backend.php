@@ -295,8 +295,8 @@ else{
             document.getElementById('phoneNumber').value = '';
             document.getElementById('seat').value = '';
             document.getElementById('attend').value = '';
-            document.getElementById('eatMeat').value = '';
-            document.getElementById('eatVege').value = '';
+            document.getElementById('eatMeat').value = '0';
+            document.getElementById('eatVege').value = '0';
             document.getElementById('checkbox_vege').checked = false;
             document.getElementById('checkbox_meat').checked = false;
             document.getElementById('none').checked = false;

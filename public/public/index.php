@@ -103,7 +103,9 @@
 
       function get_meal(){
           if (document.getElementById('eatMeat').value === '0' && document.getElementById('eatVege').value === '0') {
-              alert('請填寫葷素用餐人數！')
+              alert('請填寫葷素用餐人數！');
+          } else if (((document.getElementById('checkbox_meat').checked === true) && (document.getElementById('eatMeat').value === '0')) || ((document.getElementById('checkbox_vege').checked === true) && (document.getElementById('eatVege').value === '0'))) {
+              alert('請確認葷素用餐人數！');
           } else {
               if (document.getElementById('checkbox_meat').checked === true) {
                   meat_count = document.getElementById('eatMeat').value;
@@ -200,18 +202,18 @@
                     <label class="form-option-title" for="phoneNumber">聯絡電話 <strong style="color: red;">*</strong></label>
                     <input class="form-input" type="text" id="phoneNumber"><br><br>
 
-                    <label class="form-option-title" for="attend">請問您是否方便參加?</label>
+                    <label class="form-option-title" for="attend">請問您是否方便參加?<strong style="color: red;"> *</strong></label>
                     <select id="attend" onchange="displayTable()">
                         <option value="參加">一定到場祝福</option>
                         <option value="不參加">不方便參加</option>
                     </select><br><br>
 
                     <div id="attend-table">
-                        <label class="form-option-title" for="invitation">是否需親送喜帖並當面邀請?</label><br>
+                        <label class="form-option-title" for="invitation">是否需親送喜帖並當面邀請?<strong style="color: red;"> *</strong></label><br>
                         <input name="invitation" type="radio" value="self" id="self"> 需要, 約一下時間 <br><br>
                         <input name="invitation" type="radio" value="none" id="none"> 不用, 我記得時間會準時出席 <br><br>
 
-                        <label class="form-option-title" for="attendNumber">出席人數及餐食屬性</label><br>
+                        <label class="form-option-title" for="attendNumber">出席人數及餐食屬性<strong style="color: red;"> *</strong></label><br>
                         <div class="form-meal">
                             <input id="checkbox_meat" type="checkbox" value="meat"> 葷食,&nbsp;&nbsp;
                             <select id="eatMeat" style="width: 85%;">
