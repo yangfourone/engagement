@@ -5,8 +5,8 @@ class Admin{
 		//connet db
 		require 'connect.php';
 
-		$account = $input['account'];
-		$pwd = $input['pwd'];
+        $account = $_POST['account'];
+        $pwd = $_POST['pwd'];
 
 		if(!isset($account)||empty($account)||!isset($pwd)||empty($pwd)) {
 			return 'EMPTY';

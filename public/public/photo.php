@@ -63,6 +63,9 @@
     <!-- main photo -->
     <br>
     <div class="row" id="main-card" style="display: none;" align="center">
+<!--        <div class="col-lg-2 d-none d-lg-block">-->
+<!--            <img src="pic/buzz1.png">-->
+<!--        </div>-->
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
             <div class="card">
@@ -74,6 +77,9 @@
             </div>
         </div>
         <div class="col-lg-1"></div>
+<!--        <div class="col-lg-2 d-none d-lg-block">-->
+<!--            <img src="pic/buzz2.png">-->
+<!--        </div>-->
         <hr/>
     </div>
 

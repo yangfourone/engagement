@@ -81,8 +81,6 @@
           document.getElementById('attend').value = '';
           document.getElementById('eatMeat').value = '';
           document.getElementById('eatVege').value = '';
-          document.getElementById('checkbox_vege').checked = false;
-          document.getElementById('checkbox_meat').checked = false;
           document.getElementById('none').checked = false;
           document.getElementById('self').checked = false;
           document.getElementById('card').style.display = 'none';
@@ -104,19 +102,9 @@
       function get_meal(){
           if (document.getElementById('eatMeat').value === '0' && document.getElementById('eatVege').value === '0') {
               alert('請填寫葷素用餐人數！');
-          } else if (((document.getElementById('checkbox_meat').checked === true) && (document.getElementById('eatMeat').value === '0')) || ((document.getElementById('checkbox_vege').checked === true) && (document.getElementById('eatVege').value === '0'))) {
-              alert('請確認葷素用餐人數！');
           } else {
-              if (document.getElementById('checkbox_meat').checked === true) {
-                  meat_count = document.getElementById('eatMeat').value;
-              } else {
-                  meat_count = 0;
-              }
-              if (document.getElementById('checkbox_vege').checked === true) {
-                  vegetable_count = document.getElementById('eatVege').value;
-              } else {
-                  vegetable_count = 0;
-              }
+              meat_count = document.getElementById('eatMeat').value;
+              vegetable_count = document.getElementById('eatVege').value;
 
               $.ajax({
                   type: "POST",
@@ -215,7 +203,7 @@
 
                         <label class="form-option-title" for="attendNumber">出席人數及餐食屬性<strong style="color: red;"> *</strong></label><br>
                         <div class="form-meal">
-                            <input id="checkbox_meat" type="checkbox" value="meat"> 葷食,&nbsp;&nbsp;
+                            葷食:&nbsp;
                             <select id="eatMeat" style="width: 85%;">
                                 <option value="0">0 位</option>
                                 <option value="1">1 位</option>
@@ -231,7 +219,7 @@
                             </select> <br>
                         </div>
                         <div class="form-meal">
-                            <input id="checkbox_vege" type="checkbox" value="vege"> 素食,&nbsp;&nbsp;
+                            素食:&nbsp;
                             <select id="eatVege" style="width: 85%;">
                                 <option value="0">0 位</option>
                                 <option value="1">1 位</option>

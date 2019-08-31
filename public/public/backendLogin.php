@@ -23,28 +23,29 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/JavaScript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/JavaScript">
-        function login() {
-            $.ajax({
-                type: 'POST',
-                url: '../apiv1/admin/login',
-                dataType: "json",
-                data: {
-                    account: $("#account").val(),
-                    pwd: $("#password").val()
-                },
-                success: function(data) {
-                    if(data=='loginSuccess'){
-                        window.location = 'backend.php';
-                    }
-                    else{
+        $(document).ready(function(){
+            $("#login").click(function() {
+                $.ajax({
+                    type: "POST",
+                    url: "../apiv1/admin/login",
+                    dataType: "json",
+                    data: {
+                        account: $("#account").val(),
+                        pwd: $("#password").val()
+                    },
+                    success: function(data) {
+                        if(data === "loginSuccess"){
+                            window.location = 'backend.php';
+                        } else{
+                            alert('請確認帳號或密碼是否輸入正確！');
+                        }
+                    },
+                    error: function() {
                         alert('請確認帳號或密碼是否輸入正確！');
                     }
-                },
-                error: function(jqXHR) {
-                    alert("發生錯誤: " + jqXHR.status);
-                }
+                })
             })
-        }
+        })
     </script>
 
     <style>
@@ -78,7 +79,7 @@
                             <label for="password">密碼</label>
                             <input class="form-control" id="password" type="password">
                         </div>
-                        <button class="button2" onclick="login()">登入</button>
+                        <button class="button2" id="login">登入</button>
                     </form>
                 </div>
         </section>

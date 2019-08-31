@@ -157,11 +157,12 @@ else{
         }
 
         function post_data($action){
+            if (document.getElementById('attend').value === '參加') {
 
-            get_meal();
-            get_invitation();
+                get_invitation();
+                get_meal($action);
 
-            if ($action === 'update') {
+            } else {
                 $.ajax({
                     type: "POST",
                     url: "../apiv1/guest/" + $action,
@@ -170,12 +171,12 @@ else{
                         id: $("#id").val(),
                         guestName: $("#guestName").val(),
                         phoneNumber: $("#phoneNumber").val(),
-                        seat: $("#seat").val(),
-                        invitation: invitation_selected,
-                        invitationAddress: invitation_address,
-                        attend: $("#attend").val(),
-                        eatMeat: meat_count,
-                        eatVege: vegetable_count
+                        seat: "---",
+                        invitation: "---",
+                        invitationAddress: "---",
+                        attend: "不參加",
+                        eatMeat: "---",
+                        eatVege: "---",
                     },
                     success: function() {
                         getGuestData();
@@ -183,40 +184,7 @@ else{
                         $("#seat").hide();
                     },
                     error: function() {
-                        $("#post_result").show();
-                        $("#post_result").html('錯誤');
-                    }
-                })
-            } else if ($action === 'add') {
-                let seatInfo
-                if ($("#attend").val() === '參加') {
-                    seatInfo = '尚未安排'
-                } else {
-                    seatInfo = '---'
-                }
-                $.ajax({
-                    type: "POST",
-                    url: "../apiv1/guest/" + $action,
-                    dataType: "json",
-                    data: {
-                        id: $("#id").val(),
-                        guestName: $("#guestName").val(),
-                        phoneNumber: $("#phoneNumber").val(),
-                        seat: seatInfo,
-                        invitation: invitation_selected,
-                        invitationAddress: invitation_address,
-                        attend: $("#attend").val(),
-                        eatMeat: meat_count,
-                        eatVege: vegetable_count
-                    },
-                    success: function() {
-                        getGuestData();
-                        $("#card").hide();
-                        $("#seat").hide();
-                    },
-                    error: function() {
-                        $("#post_result").show();
-                        $("#post_result").html('錯誤');
+                        alert('請確認資料是否成功填妥')
                     }
                 })
             }
@@ -245,36 +213,24 @@ else{
 
                     if (data.invitation === 'none') {
                         // 不用
-                        // document.getElementById('attend-table').style.display = 'block';
                         document.getElementById('none').checked = true;
                         document.getElementById('self').checked = false;
                     } else if (data.invitation === 'self') {
                         // 當面
-                        // document.getElementById('attend-table').style.display = 'block';
                         document.getElementById('none').checked = false;
                         document.getElementById('self').checked = true;
                     } else {
                         // 不參加
-                        // document.getElementById('attend-table').style.display = 'none';
                         document.getElementById('none').checked = false;
                         document.getElementById('self').checked = false;
                     }
                     document.getElementById('attend').value = data.attend;
 
                     // check for eatMeat
-                    if (data.eatMeat === '0') {
-                        document.getElementById('checkbox_meat').checked = false;
-                    } else {
-                        document.getElementById('checkbox_meat').checked = true;
-                        document.getElementById('eatMeat').value = data.eatMeat;
-                    }
+                    document.getElementById('eatMeat').value = data.eatMeat;
+
                     // check for eatVege
-                    if (data.eatVege === '0') {
-                        document.getElementById('checkbox_vege').checked = false;
-                    } else {
-                        document.getElementById('checkbox_vege').checked = true;
-                        document.getElementById('eatVege').value = data.eatVege;
-                    }
+                    document.getElementById('eatVege').value = data.eatVege;
                 },
                 error: function(jqXHR) {
                     alert("發生錯誤: " + jqXHR.status + ' ' + jqXHR.statusText);
@@ -294,11 +250,9 @@ else{
             document.getElementById('guestName').value = '';
             document.getElementById('phoneNumber').value = '';
             document.getElementById('seat').value = '';
-            document.getElementById('attend').value = '';
+            document.getElementById('attend').value = '參加';
             document.getElementById('eatMeat').value = '0';
             document.getElementById('eatVege').value = '0';
-            document.getElementById('checkbox_vege').checked = false;
-            document.getElementById('checkbox_meat').checked = false;
             document.getElementById('none').checked = false;
             document.getElementById('self').checked = false;
             $("#guest_delete").hide();
@@ -328,20 +282,67 @@ else{
             });
         }
 
-        function get_meal(){
+        function get_meal($action){
             if (document.getElementById('eatMeat').value === '0' && document.getElementById('eatVege').value === '0') {
                 alert('請填寫葷素用餐人數！')
             } else {
-                if (document.getElementById('checkbox_meat').checked === true) {
-                    meat_count = document.getElementById('eatMeat').value;
-                } else {
-                    meat_count = 0;
+                meat_count = document.getElementById('eatMeat').value;
+                vegetable_count = document.getElementById('eatVege').value;
+
+                if ($action === 'update') {
+                    $.ajax({
+                        type: "POST",
+                        url: "../apiv1/guest/" + $action,
+                        dataType: "json",
+                        data: {
+                            id: $("#id").val(),
+                            guestName: $("#guestName").val(),
+                            phoneNumber: $("#phoneNumber").val(),
+                            seat: $("#seat").val(),
+                            invitation: invitation_selected,
+                            invitationAddress: invitation_address,
+                            attend: $("#attend").val(),
+                            eatMeat: meat_count,
+                            eatVege: vegetable_count
+                        },
+                        success: function() {
+                            getGuestData();
+                            $("#card").hide();
+                            $("#seat").hide();
+                        },
+                        error: function() {
+                            $("#post_result").show();
+                            $("#post_result").html('錯誤');
+                        }
+                    })
+                } else if ($action === 'add') {
+                    $.ajax({
+                        type: "POST",
+                        url: "../apiv1/guest/" + $action,
+                        dataType: "json",
+                        data: {
+                            id: $("#id").val(),
+                            guestName: $("#guestName").val(),
+                            phoneNumber: $("#phoneNumber").val(),
+                            seat: "尚未安排",
+                            invitation: invitation_selected,
+                            invitationAddress: invitation_address,
+                            attend: $("#attend").val(),
+                            eatMeat: meat_count,
+                            eatVege: vegetable_count
+                        },
+                        success: function() {
+                            getGuestData();
+                            $("#card").hide();
+                            $("#seat").hide();
+                        },
+                        error: function() {
+                            $("#post_result").show();
+                            $("#post_result").html('錯誤');
+                        }
+                    })
                 }
-                if (document.getElementById('checkbox_vege').checked === true) {
-                    vegetable_count = document.getElementById('eatVege').value;
-                } else {
-                    vegetable_count = 0;
-                }
+                topFunction();
             }
         }
     </script>
@@ -364,19 +365,19 @@ else{
 
                         <div class="card-body" align="left">
                             <label class="backend-form-title" for="id">編號:</label>
-                            <input class="backend-form-input" type="text" id="id" disabled> <br><br>
+                            <input class="backend-form-input" type="text" id="id" disabled> <br>
 
                             <label class="backend-form-title" for="guestName">您的大名</label>
-                            <input class="backend-form-input" type="text" id="guestName"> <br><br>
+                            <input class="backend-form-input" type="text" id="guestName"> <br>
 
                             <label class="backend-form-title" for="phoneNumber">聯絡電話</label>
-                            <input class="backend-form-input" type="text" id="phoneNumber"> <br><br>
+                            <input class="backend-form-input" type="text" id="phoneNumber"> <br>
 
                             <label class="backend-form-title" for="attend">請問您是否方便參加?</label>
                             <select id="attend" onchange="displayTable()">
                                 <option value="參加">一定到場祝福</option>
                                 <option value="不參加">不方便參加</option>
-                            </select> <br><br>
+                            </select> <br>
 
                             <div id="attend-table">
 
@@ -388,7 +389,7 @@ else{
                                 <input name="invitation" type="radio" value="none" id="none"> 不用, 我記得時間會準時出席<br><br>
 
                                 <label class="backend-form-title" for="attendNumber">出席人數及餐食屬性</label><br>
-                                <input id="checkbox_meat" type="checkbox" value="meat"> 葷食,&nbsp;&nbsp;
+                                葷食:&nbsp;
                                 <select id="eatMeat"  style="width: 80%;">
                                     <option value="0">0 位</option>
                                     <option value="1">1 位</option>
@@ -403,7 +404,7 @@ else{
                                     <option value="10">10 位</option>
                                 </select><br>
 
-                                <input id="checkbox_vege" type="checkbox" value="vege"> 素食,&nbsp;&nbsp;
+                                素食:&nbsp;
                                 <select id="eatVege" style="width: 80%;">
                                     <option value="0">0 位</option>
                                     <option value="1">1 位</option>
