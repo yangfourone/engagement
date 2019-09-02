@@ -47,6 +47,7 @@ else{
 
         $(document).ready(function(){
             getGuestData();
+            getQuantity();
 
             $('#guestTable').DataTable({
                 "paging":   false,
@@ -102,13 +103,27 @@ else{
                 dataType: "json",
                 cache: false,
                 success :  function(result) {
-                    console.log(result);
                     LoadGuestDataToTable(result);
                 },
                 error: function(jqXHR) {
                     if(jqXHR.status=='601'){
                         $("#guestTable").hide();
                     }
+                }
+            });
+        }
+
+        function getQuantity() {
+            $.ajax({
+                type : "GET",
+                url  : "../apiv1/guest/getbyquantity",
+                dataType: "json",
+                cache: false,
+                success :  function(result) {
+                    console.log(result[0]['SUM(eatMeat)']);
+                    console.log(result[1]['SUM(eatVege)']);
+                    document.getElementById('meat_count').innerText = '葷: ' + result[0]['SUM(eatMeat)'];
+                    document.getElementById('vege_count').innerText = '素: ' + result[1]['SUM(eatVege)'];
                 }
             });
         }
@@ -147,6 +162,7 @@ else{
                 },
                 success: function() {
                     getGuestData();
+                    getQuantity();
                     $("#card").hide();
                     $("#seat").hide();
                 },
@@ -180,6 +196,7 @@ else{
                     },
                     success: function() {
                         getGuestData();
+                        getQuantity();
                         $("#card").hide();
                         $("#seat").hide();
                     },
@@ -307,6 +324,7 @@ else{
                         },
                         success: function() {
                             getGuestData();
+                            getQuantity();
                             $("#card").hide();
                             $("#seat").hide();
                         },
@@ -333,6 +351,7 @@ else{
                         },
                         success: function() {
                             getGuestData();
+                            getQuantity();
                             $("#card").hide();
                             $("#seat").hide();
                         },
@@ -356,6 +375,11 @@ else{
         <section>
             <div class="row top-area">
                 <div class="col-lg-4">
+                    <div class="float-right">
+                        <label id="meat_count"></label>&nbsp;&nbsp;&nbsp;
+                        <label id="vege_count"></label>
+                    </div>
+                    <br>
                     <button class="backend-form-button color-green" id="NewGuest" style="width: 100%">新增</button>
                     <br><br>
                     <div class="card" id="card" style="display: none;">

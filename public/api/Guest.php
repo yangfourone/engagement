@@ -54,15 +54,21 @@ class Guest{
 			return $getById_dataArray;
 		}
 	}
-	function getByRandom() {
+	function getByQuantity() {
         // connet db
         require 'connect.php';
 
         //query data by method
-        $getByRandom_sql = "SELECT guestName FROM guest_engagement WHERE attend = '參加' ORDER BY RAND() LIMIT 1";
-        $getByRandom_result = mysqli_query($con,$getByRandom_sql);
-        $getByRandom_dataArray = mysqli_fetch_array($getByRandom_result,MYSQLI_ASSOC);
-        return $getByRandom_dataArray;
+        $meatQuantity_sql = "SELECT SUM(eatMeat) FROM guest_engagement";
+        $vegeQuantity_sql = "SELECT SUM(eatVege) FROM guest_engagement";
+        $meatQuantity_result = mysqli_query($con,$meatQuantity_sql);
+        $vegeQuantity_result = mysqli_query($con,$vegeQuantity_sql);
+
+        $meat = mysqli_fetch_array($meatQuantity_result,MYSQLI_ASSOC);
+        $vege = mysqli_fetch_array($vegeQuantity_result,MYSQLI_ASSOC);
+
+        $getByQuantity_dataArray = [$meat,$vege];
+        return $getByQuantity_dataArray;
     }
 
 	function add($input){

@@ -32,9 +32,9 @@ class GuestHandler extends SimpleRest{
 					$this->set_status_code($this->encodeJson($guest_user->getByUser($this->input)));
 					break;
 				}
-                else if($this->action == 'getbyrandom'){
-                    $guest_random = new Guest();
-                    $this->set_status_code($this->encodeJson($guest_random->getByRandom($this->input)));
+                else if($this->action == 'getbyquantity'){
+                    $guest_quantity = new Guest();
+                $this->set_status_code($this->encodeJson($guest_quantity->getByQuantity()));
                     break;
                 }
 			case 'post':
