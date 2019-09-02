@@ -83,6 +83,7 @@ class Guest{
 		$eatMeat = $input['eatMeat'];
         $eatVege = $input['eatVege'];
         $seat = $input['seat'];
+        $comment = $input['comment'];
 
         $checkExist_sql = "SELECT * FROM guest_engagement WHERE guestName = '$guestName' AND phoneNumber = '$phoneNumber'";
         $checkExist_result = mysqli_query($con,$checkExist_sql);
@@ -93,7 +94,7 @@ class Guest{
 		} else if ($checkExist_count !== 0) {
 		    return 'EXIST';
         } else {
-            $sql_insert = "INSERT INTO guest_engagement (guestName,phoneNumber,invitation,invitationAddress,attend,eatMeat,eatVege,seat) VALUES ('$guestName','$phoneNumber','$invitation','$invitationAddress','$attend','$eatMeat','$eatVege','$seat')";
+            $sql_insert = "INSERT INTO guest_engagement (guestName,phoneNumber,invitation,invitationAddress,attend,eatMeat,eatVege,seat,comment) VALUES ('$guestName','$phoneNumber','$invitation','$invitationAddress','$attend','$eatMeat','$eatVege','$seat','$comment')";
             mysqli_query($con,$sql_insert);
             return 'ok';
 		}
@@ -128,12 +129,13 @@ class Guest{
         $eatMeat = $input['eatMeat'];
         $eatVege = $input['eatVege'];
         $seat = $input['seat'];
+        $comment = $input['comment'];
 
         if(!isset($guestName)||empty($guestName)||!isset($phoneNumber)||!isset($invitation)||!isset($invitationAddress)||!isset($attend)||!isset($seat)){
             return 'EMPTY';
         }
 		else{
-			$sql_update ="UPDATE guest_engagement SET guestName='$guestName', phoneNumber='$phoneNumber', invitation='$invitation', invitationAddress='$invitationAddress', attend='$attend', eatMeat='$eatMeat', eatVege='$eatVege', seat='$seat' WHERE id='$id'";
+			$sql_update ="UPDATE guest_engagement SET guestName='$guestName', phoneNumber='$phoneNumber', invitation='$invitation', invitationAddress='$invitationAddress', attend='$attend', eatMeat='$eatMeat', eatVege='$eatVege', seat='$seat', comment='$comment' WHERE id='$id'";
 			mysqli_query($con,$sql_update);
 			return 'ok';
 		}

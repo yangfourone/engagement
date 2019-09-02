@@ -24,7 +24,7 @@
     <script type="text/JavaScript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/JavaScript">
         $(document).ready(function(){
-            $("#login").click(function() {
+            $("#login").on('click', () => {
                 $.ajax({
                     type: "POST",
                     url: "../apiv1/admin/login",
@@ -45,7 +45,7 @@
                     }
                 })
             })
-        })
+        });
     </script>
 
     <style>
@@ -70,17 +70,11 @@
             <div class="card card-login mx-auto mt-3 backend-login-form">
                 <div class="card-header">後台登入</div>
                 <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="account">帳號</label>
-                            <input class="form-control" id="account" type="text">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">密碼</label>
-                            <input class="form-control" id="password" type="password">
-                        </div>
-                        <button class="button2" id="login">登入</button>
-                    </form>
+                    <label for="account">帳號</label>
+                    <input class="form-control" id="account" type="text"><br>
+                    <label for="password">密碼</label>
+                    <input class="form-control" id="password" type="password"><br>
+                    <button class="button2" id="login">登入</button>
                 </div>
         </section>
 

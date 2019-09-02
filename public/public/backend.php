@@ -147,7 +147,8 @@ else{
                     guestData[i].invitation,
                     guestData[i].attend,
                     guestData[i].eatMeat,
-                    guestData[i].eatVege
+                    guestData[i].eatVege,
+                    guestData[i].comment
                 ]).draw(false);
             }
             guestDataTable.columns.adjust().draw();
@@ -193,6 +194,7 @@ else{
                         attend: "不參加",
                         eatMeat: "---",
                         eatVege: "---",
+                        comment: "",
                     },
                     success: function() {
                         getGuestData();
@@ -221,6 +223,7 @@ else{
                     document.getElementById('guestName').value = data.guestName;
                     document.getElementById('phoneNumber').value = data.phoneNumber;
                     document.getElementById('seat').value = data.seat;
+                    document.getElementById('comment').value = data.comment;
 
                     if (data.attend === '參加') {
                         document.getElementById('attend-table').style.display = 'block';
@@ -270,6 +273,7 @@ else{
             document.getElementById('attend').value = '參加';
             document.getElementById('eatMeat').value = '0';
             document.getElementById('eatVege').value = '0';
+            document.getElementById('comment').value = '';
             document.getElementById('none').checked = false;
             document.getElementById('self').checked = false;
             $("#guest_delete").hide();
@@ -320,7 +324,8 @@ else{
                             invitationAddress: invitation_address,
                             attend: $("#attend").val(),
                             eatMeat: meat_count,
-                            eatVege: vegetable_count
+                            eatVege: vegetable_count,
+                            comment: $("#comment").val()
                         },
                         success: function() {
                             getGuestData();
@@ -347,7 +352,8 @@ else{
                             invitationAddress: invitation_address,
                             attend: $("#attend").val(),
                             eatMeat: meat_count,
-                            eatVege: vegetable_count
+                            eatVege: vegetable_count,
+                            comment: $("#comment").val()
                         },
                         success: function() {
                             getGuestData();
@@ -374,7 +380,7 @@ else{
         <!-- Body -->
         <section>
             <div class="row top-area">
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="float-right">
                         <label id="meat_count"></label>&nbsp;&nbsp;&nbsp;
                         <label id="vege_count"></label>
@@ -441,8 +447,11 @@ else{
                                     <option value="8">8 位</option>
                                     <option value="9">9 位</option>
                                     <option value="10">10 位</option>
-                                </select><br>
+                                </select><br><br>
                             </div>
+
+                            <label class="backend-form-title" for="comment">備註:</label>
+                            <input class="backend-form-input" type="text" id="comment"><br><br>
                         </div>
 
                         <div class="card-footer" align="right">
@@ -454,7 +463,7 @@ else{
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-9">
                     <div class="table" style="width: 100%;">
                         <table id="guestTable" class="display" cellspacing="0" width="100%" >
                             <thead>
@@ -467,6 +476,7 @@ else{
                                 <th>是否參加</th>
                                 <th>葷食人數</th>
                                 <th>素食人數</th>
+                                <th>備註</th>
                             </tr>
                             </thead>
                         </table>

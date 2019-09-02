@@ -60,6 +60,7 @@
                           attend: "不參加",
                           eatMeat: "---",
                           eatVege: "---",
+                          comment: "",
                       },
                       success: function() {
                           alert('提交成功！');
@@ -118,7 +119,8 @@
                       invitationAddress: invitation_address,
                       attend: $("#attend").val(),
                       eatMeat: meat_count,
-                      eatVege: vegetable_count
+                      eatVege: vegetable_count,
+                      comment: "",
                   },
                   success: function() {
                       alert('提交成功！');
