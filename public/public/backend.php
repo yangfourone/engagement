@@ -127,8 +127,8 @@ else{
                 success :  function(result) {
                     console.log(result[0]['SUM(eatMeat)']);
                     console.log(result[1]['SUM(eatVege)']);
-                    document.getElementById('meat_count').innerText = '葷: ' + result[0]['SUM(eatMeat)'];
-                    document.getElementById('vege_count').innerText = '素: ' + result[1]['SUM(eatVege)'];
+                    document.getElementById('meat_count').innerText = result[0]['SUM(eatMeat)'];
+                    document.getElementById('vege_count').innerText = result[1]['SUM(eatVege)'];
                 }
             });
         }
@@ -388,12 +388,12 @@ else{
         <section>
             <div class="row top-area">
                 <div class="col-md-5 col-lg-3">
-                    <div class="float-right">
-                        <label id="meat_count"></label>&nbsp;&nbsp;&nbsp;
-                        <label id="vege_count"></label>
+                    <div class="w-100" align="center">
+                        <button type="button" class="btn btn-danger">葷食: <span class="badge" id="meat_count"></span></button>
+                        <button type="button" class="btn btn-success">素食: <span class="badge" id="vege_count"></span></button>
                     </div>
                     <br>
-                    <button class="backend-form-button color-green" id="NewGuest" style="width: 100%">新增</button>
+                    <button class="backend-form-button btn-secondary" id="NewGuest" style="width: 100%">新增</button>
                     <br><br>
                     <div class="card" id="card" style="display: none;">
                         <div class="card-header">

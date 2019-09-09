@@ -22,6 +22,14 @@ hr {
     border: 1px solid;
 }
 
+.dataTables_filter label {
+    font-size: 18px;
+}
+.dataTables_filter input[type=search] {
+    color: #aaa;
+    border-radius: 7%;
+}
+
 /* photo */
 #left-button, #right-button {
     width: 3%;
@@ -89,7 +97,7 @@ hr {
 
 /* backend */
 .backend-form-button {
-    width: 20%;
+    width: 25%;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
