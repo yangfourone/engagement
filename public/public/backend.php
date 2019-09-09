@@ -28,7 +28,11 @@ else{
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
         <!--Data Table-->
-        <script type="text/javascript"  src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+        <!--Data Table Responsive-->
+        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
 
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="css/myStyle.css">
@@ -50,6 +54,7 @@ else{
             getQuantity();
 
             $('#guestTable').DataTable({
+                "responsive": true,
                 "paging":   false,
                 "ordering": true,
                 "info":     true,
@@ -210,7 +215,9 @@ else{
         }
 
         function click_row(row){
-            topFunction();
+            if (document.documentElement.clientWidth > 992) {
+                topFunction();
+            }
             clear_add_table();
             $.ajax({
                 type: "GET",
@@ -380,7 +387,7 @@ else{
         <!-- Body -->
         <section>
             <div class="row top-area">
-                <div class="col-lg-3">
+                <div class="col-md-5 col-lg-3">
                     <div class="float-right">
                         <label id="meat_count"></label>&nbsp;&nbsp;&nbsp;
                         <label id="vege_count"></label>
@@ -463,21 +470,21 @@ else{
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-md-7 col-lg-9">
                     <div class="table" style="width: 100%;">
-                        <table id="guestTable" class="display" cellspacing="0" width="100%" >
-                            <thead>
-                            <tr>
-                                <th>編號</th>
-                                <th>名字</th>
-                                <th>座位</th>
-                                <th>電話</th>
-                                <th>邀請函形式</th>
-                                <th>是否參加</th>
-                                <th>葷食人數</th>
-                                <th>素食人數</th>
-                                <th>備註</th>
-                            </tr>
+                        <table id="guestTable" class="display nowrap" cellspacing="0" width="100%" >
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>編號</th>
+                                    <th>名字</th>
+                                    <th>座位</th>
+                                    <th>電話</th>
+                                    <th>邀請函形式</th>
+                                    <th>是否參加</th>
+                                    <th>葷食人數</th>
+                                    <th>素食人數</th>
+                                    <th>備註</th>
+                                </tr>
                             </thead>
                         </table>
                     </div>

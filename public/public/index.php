@@ -69,7 +69,7 @@
                           document.getElementById('welcome').style.display = 'block';
                       },
                       error: function() {
-                          alert('請確認資料是否成功填妥')
+                          alert('發生錯誤！可能原因為\n1. 此組（姓名+電話）已經填過表單！\n2. 資料尚未填妥！\n\n如想要更改資料請直接聯繫楊進利或馥嘉～');
                       }
                   })
               }
