@@ -36,7 +36,11 @@
                     },
                     success: function(data) {
                         console.log(data);
-                        alert(data.guestName + '的座位在 ' + data.seat + ' 桌, 電話: ' + data.phoneNumber);
+                        let message = '';
+                        for (let i in data){
+                            message = message.concat('\n' + data[i].guestName + '的座位在 ' + data[i].seat + ' 桌, 電話: ' + data[i].phoneNumber);
+                        }
+                        alert(message);
                     },
                     error: function() {
                         alert("查無資料！請確認姓名是否輸入正確！");

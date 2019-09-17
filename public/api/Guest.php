@@ -46,11 +46,16 @@ class Guest{
 		$getById_sql = "SELECT guestName, seat, phoneNumber FROM guest_engagement WHERE guestName = '$guestName'";
 		$getById_result = mysqli_query($con,$getById_sql);
 
+        $getById_dataArray = array();
+
 		if(mysqli_num_rows($getById_result) == 0) {
 			return 'NULL';
 		}
 		else {
-			$getById_dataArray = mysqli_fetch_array($getById_result,MYSQLI_ASSOC);
+            while ($row = mysqli_fetch_array($getById_result,MYSQLI_ASSOC)) {
+                $getById_dataArray[] = $row;
+            }
+//			$getById_dataArray = mysqli_fetch_array($getById_result,MYSQLI_ASSOC);
 			return $getById_dataArray;
 		}
 	}
