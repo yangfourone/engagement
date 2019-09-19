@@ -23,173 +23,415 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/JavaScript" src="js/jquery-1.11.3.min.js"></script>
-    <script type="text/JavaScript">
-        let index;
-        let total=12;
 
-        function photoClick(no) {
-            index = no;
-            topFunction();
-            document.getElementById('main-photo').src = 'pic/set/' + no + '.jpg';
-            document.getElementById('main-card').style.display = 'block';
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-        function left() {
-            if (index == 1) {
-                photoClick(total);
-            } else {
-                photoClick(index-1);
-            }
-        }
-
-        function right() {
-            if (index == total) {
-                photoClick(1);
-            } else {
-                photoClick(index+1);
-            }
-        }
-    </script>
 
     <body>
     <!-- Navigation -->
     <?php require('header.php') ?>
 
     <!-- main photo -->
-    <br>
-    <div class="row" id="main-card" style="display: none;" align="center">
-<!--        <div class="col-lg-2 d-none d-lg-block">-->
-<!--            <img src="pic/buzz1.png">-->
-<!--        </div>-->
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-            <div class="card">
-                <div class="card-body" align="center">
-                    <input class="main-photo-left-button" type="image" src="pic/left.png" id="left-button" onclick="left();">
-                    <img class="main-photo" src="" id="main-photo">
-                    <input class="main-photo-right-button" type="image" src="pic/right.png" id="right-button" onclick="right();">
+
+    <div class="row mx-2">
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
                 </div>
-            </div>
+                <img class="img-fluid" src="pic/set/1.jpg" alt="">
+            </a>
         </div>
-        <div class="col-lg-1"></div>
-<!--        <div class="col-lg-2 d-none d-lg-block">-->
-<!--            <img src="pic/buzz2.png">-->
-<!--        </div>-->
-        <hr/>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/2.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/3.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/4.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/5.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/6.jpg" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal7">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/7.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal8">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/8.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal9">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/9.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal10">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/10.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal11">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/11.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 col-sm-4 portfolio-item my-4">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal12">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fas fa-plus fa-3x"></i>
+                    </div>
+                </div>
+                <img class="img-fluid" src="pic/set/12.jpg" alt="">
+            </a>
+        </div>
     </div>
 
-    <!-- photo set -->
-    <section class="py-5">
-        <div class="row photo-set-row">
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/1.jpg" onclick="photoClick(1)">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/2.jpg" onclick="photoClick(2)">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/3.jpg" onclick="photoClick(3)">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Portfolio Modals -->
 
-    <!-- photo -->
-    <section class="py-5">
-        <div class="row photo-set-row">
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/4.jpg" onclick="photoClick(4)">
+    <!-- Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/5.jpg" onclick="photoClick(5)">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/6.jpg" onclick="photoClick(6)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/1.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- photo -->
-    <section class="py-5">
-        <div class="row photo-set-row">
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/7.jpg" onclick="photoClick(7)">
+    <!-- Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/8.jpg" onclick="photoClick(8)">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/9.jpg" onclick="photoClick(9)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/2.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- photo set -->
-    <section class="py-5">
-        <div class="row photo-set-row">
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/10.jpg" onclick="photoClick(1)">
+    <!-- Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/11.jpg" onclick="photoClick(2)">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card" id="card">
-                    <div class="card-body" align="left">
-                        <input type="image" src="pic/set/12.jpg" onclick="photoClick(3)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/3.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/5.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/6.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 7 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/7.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 8 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/8.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 9 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/9.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 10 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/10.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 11 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/11.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 12 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <img class="img-fluid d-block mx-auto" src="pic/set/12.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <?php require('footer.php') ?>

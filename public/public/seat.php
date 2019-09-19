@@ -38,7 +38,7 @@
                         console.log(data);
                         let message = '';
                         for (let i in data){
-                            message = message.concat('\n' + data[i].guestName + '的座位在 ' + data[i].seat + ' 桌, 電話: ' + data[i].phoneNumber);
+                            message = message.concat('\n' + data[i].guestName+ ', 電話: ' + data[i].phoneNumber) + '\n您的座位在 ' + data[i].seat;
                         }
                         alert(message);
                     },
@@ -56,7 +56,7 @@
 
         <!-- Search Sheet -->
         <section class="py-2">
-            <div class="row py-3" style="margin: 5px;">
+            <div class="row py-3 px-2">
                 <div class="col-lg-4">
                     <br>
                     <div class="card">
