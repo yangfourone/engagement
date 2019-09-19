@@ -68,6 +68,11 @@
                             <input class="search-seat-name-input" type="text" id="guestName"><br><br>
                             <button class="search-seat-button" id="submit">查詢</button>
                         </div>
+                        <div class="card-footer">
+                            <p>對於這個網站有興趣的人</p>
+                            <p>可以到 Menu 的「開發人員」了解喔！</p>
+                            <a href="introduction.php">點我連結到開發人員介紹</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-8" align="center">

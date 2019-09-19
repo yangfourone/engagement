@@ -16,6 +16,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.google.com.tw/maps/dir/Current+Location/710台南市永康區永安一街99號">如何前往</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="introduction.php">開發人員</a>
+                </li>
             </ul>
         </div>
     </div>

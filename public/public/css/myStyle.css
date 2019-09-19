@@ -309,3 +309,9 @@ hr {
     transform: rotate(90deg);
     background-color: #212529;
 }
+
+
+.service-heading {
+    margin: 15px 0;
+    text-transform: none;
+}
