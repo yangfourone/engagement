@@ -40,16 +40,35 @@ hr {
 .engagement-footer {
     position: relative;
     width: 100%;
-    height: 8vw;
+    height: 20vw;
     bottom: 0;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
+@media screen and (min-width: 992px) {
+    .engagement-footer {
+        height: 8vw;
+    }
+}
+
 .engagement-footer-content {
     position: absolute;
     color: white;
+}
+
+.engagement-footer-link {
+    font-size: 18px;
+    color: white;
+    transition: transform 250ms;
+    cursor: pointer;
+}
+.engagement-footer-link:hover {
+    color: white;
+    transform: scale(3);
+    z-index: 2;
 }
 
 /* seat */
